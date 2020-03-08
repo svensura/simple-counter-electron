@@ -1,17 +1,42 @@
 {
   "name": "counterapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "electron app test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist:linux": "electron-builder --linux",
+    "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=armv7l --prune=true --out=release-builds",
+    "create-debian-installer": "electron-installer-debian --src release-builds/counterapp-linux-armv7l/ --arch armv7l --config debian.json"
   },
-  "author": "undercover",
+  "author": "Sven Sura <svensura.germanscreens.de>",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "vazir-font": "^20.1.0"
+  },
+  "devDependencies": {
+    "electron": "^8.1.0",
+    "electron-installer-debian": "^3.0.0",
+    "electron-packager": "^14.2.1"
+  },
+  "build": {
+    "appId": "de.germanscreens.counterapp",
+    "linux": {
+      "target": {
+        "target": "deb",
+        "arch": "armv7l"
+      },
+      "category": "Development",
+      "deb": {
+        "fpm": [
+          "--architecture",
+          "armhf"
+        ]
+      }
+    }
   }
 }

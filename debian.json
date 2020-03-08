@@ -1,0 +1,9 @@
+{
+    "dest": "release-builds/",
+    "categories": [
+      "Development"
+    ],
+    "lintianOverrides": [
+      "changelog-file-missing-in-native-package"
+    ]
+  }
