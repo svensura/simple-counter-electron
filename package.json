@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "dist:linux": "electron-builder --linux",
     "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=armv7l --prune=true --out=release-builds",
     "create-debian-installer": "electron-installer-debian --src release-builds/counterapp-linux-armv7l/ --arch armv7l --config debian.json"
   },
