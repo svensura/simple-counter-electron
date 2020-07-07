@@ -18,7 +18,7 @@
     "vazir-font": "^20.1.0"
   },
   "devDependencies": {
-    "electron": "^8.1.0",
+    "electron": "^8.2.4",
     "electron-installer-debian": "^3.0.0",
     "electron-packager": "^14.2.1"
   },
